@@ -1,18 +1,28 @@
 export let data = [
 	{
 		name: "proj1",
-		description: "blah",
 		songs: [
-			{ uri: "location", description: "blah", name: "song1" },
-			{ uri: "location", description: "blah", name: "song2" },
+			{
+				name: "song1",
+				takes: [{ take: 1, uri: "location" }],
+			},
+			{
+				name: "song2",
+				takes: [{ take: 1, uri: "location" }],
+			},
 		],
 	},
 	{
 		name: "proj2",
-		description: "blah",
 		songs: [
-			{ uri: "location", description: "blah", name: "song1" },
-			{ uri: "location", description: "blah", name: "song2" },
+			{
+				name: "song1",
+				takes: [{ take: 1, uri: "location" }],
+			},
+			{
+				name: "song2",
+				takes: [{ take: 1, uri: "location" }],
+			},
 		],
 	},
 ];

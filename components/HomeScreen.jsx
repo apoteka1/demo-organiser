@@ -9,22 +9,20 @@ export default function HomeScreen({ navigation }) {
 	const [projects, setProjects] = useState(data);
 
 	return (
-
-			<KeyboardAvoidingView style={styles.container} behavior={"padding"}>
-				<ProjectsList
-					projects={projects}
-					setProjects={setProjects}
-					navigation={navigation}
-				/>
-				<AddNew projects={projects} setProjects={setProjects} />
-			</KeyboardAvoidingView>
+		<KeyboardAvoidingView style={styles.container} behavior={"padding"}>
+			<AddNew projects={projects} setProjects={setProjects} />
+			<ProjectsList
+				projects={projects}
+				setProjects={setProjects}
+				navigation={navigation}
+			/>
+		</KeyboardAvoidingView>
 	);
 }
 
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-        justifyContent:"space-between",
-        alignContent:"space-between"
+		justifyContent: "space-between",
 	},
 });

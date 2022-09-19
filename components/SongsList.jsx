@@ -7,16 +7,16 @@ import {
 } from "react-native";
 import React from "react";
 
-function ProjectCard(p, navigation) {
+function SongCard(s, navigation) {
 	return (
-		<View key={p.name} style={styles.ProjectCard}>
+		<View key={s.name} style={styles.SongCard}>
 			<TouchableOpacity
 				style={styles.button}
 				onPress={() => {
-					navigation.navigate("Project", { project: p });
+					navigation.navigate("Song", { song: s });
 				}}
 			>
-				<Text style={{ fontSize: 20 }}>{p.name}</Text>
+				<Text style={{ fontSize: 20 }}>{s.name}</Text>
 			</TouchableOpacity>
 
 			<TouchableOpacity style={styles.button}>
@@ -25,28 +25,28 @@ function ProjectCard(p, navigation) {
 		</View>
 	);
 }
-export default function ProjectsList({ projects, setProjects, navigation }) {
+export default function SongsList({ songs, navigation }) {
 	return (
 		<FlatList
-			data={projects}
-			renderItem={({ item }) => ProjectCard(item, navigation)}
+			data={songs}
+			renderItem={({ item }) => SongCard(item, navigation)}
 			keyExtractor={(item) => item.name}
 		/>
 	);
 }
 
 const styles = StyleSheet.create({
-	ProjectCard: {
+	SongCard: {
 		marginTop: 10,
 		marginLeft: 10,
 		marginRight: 10,
 		flexDirection: "row",
 		justifyContent: "space-between",
 		flexWrap: "wrap",
-		backgroundColor: "#6DFF6D",
+		backgroundColor: "#9eff9e",
+        
 	},
 	button: {
-		fontSize: 20,
 		padding: 10,
 	},
 });

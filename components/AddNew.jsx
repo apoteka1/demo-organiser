@@ -4,8 +4,13 @@ import React, { useState } from "react";
 export default function AddNew({ setProjects }) {
 	const [value, onChangeText] = useState(null);
 
-	const onSubmit = (e) => {
-		setProjects((curr) => [value, ...curr]);
+	const onSubmit = () => {
+		const newProject = {
+			name: value,
+			description: "",
+			songs: [],
+		};
+		setProjects((curr) => [newProject, ...curr]);
 		onChangeText(null);
 	};
 
@@ -25,18 +30,17 @@ export default function AddNew({ setProjects }) {
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
-		margin: 10,
+		marginTop: 10,
+		marginLeft: 10,
+		marginRight: 10,
 		flexDirection: "row",
 		justifyContent: "space-between",
-		alignContent: "flex-end",
 		flexWrap: "wrap",
-		borderWidth: 5,
-		borderColor: "black",
 	},
 	input: {
 		backgroundColor: "white",
 		padding: 10,
 		width: "100%",
+		fontSize: 20,
 	},
 });
